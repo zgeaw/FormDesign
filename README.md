@@ -1,7 +1,7 @@
 ## 安装
 
 ```shell
-npm install @zgeaw/FormDesign
+npm install @zgeaw/form-design
 ```
 
 **NodeJs:**
