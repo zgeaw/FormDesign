@@ -11,7 +11,7 @@
                 <el-button size="mini" type="danger" @click="showTemplate">生成组件</el-button>
             </div>
         </div>
-        <fc-designer ref="designer"/>
+        <fc-designer ref="designer" :optionConfig="optionConfig"/>
 
         <ElFooter class="_fc-copyright" height="30px">
           <div class="_fc-b-item">
@@ -75,6 +75,10 @@ export default {
             editor: null,
             err: false,
             type: -1,
+            optionConfig: {
+                token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2MmQyMjk1MWYwOTY0NGU1YjEwYjc4ZDE1YmNkYWE5NiIsImV4cCI6MTY2ODUwMDU4OH0.7NkSqhUVRdmdPq7Ame8UUAIJvAnOYj1DIR25WQrhpn4',
+                uploadApi: '/minhang-project-cooperation/commonFile/uploadToUrl'
+            }
         };
     },
     watch: {

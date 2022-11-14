@@ -220,7 +220,8 @@
                     </ElContainer>
                 </ElAside>
                 <ElDialog :visible.sync="preview.state" width="800px" append-to-body>
-                    <ViewForm :rule="preview.rule" :option="preview.option" v-if="preview.state"></ViewForm>
+                    <ViewForm  v-model="fapi" :rule="preview.rule" :option="preview.option" v-if="preview.state"></ViewForm>
+                    <el-button type="primary" @click="onSubmit()">提交</el-button>
                 </ElDialog>
             </ElContainer>
         </ElMain>
@@ -272,6 +273,7 @@ export default {
     data() {
         const children = [];
         return {
+            fapi: {},
             FormCreate: designerForm.$form(),
             cacheProps: {},
             moveRule: null,
@@ -288,7 +290,8 @@ export default {
             preview: {
                 state: false,
                 rule: [],
-                option: {}
+                option: {
+                }
             },
             dragForm: {
                 rule: this.makeDragRule(children),
@@ -373,6 +376,12 @@ export default {
         }
     },
     methods: {
+        onSubmit(){
+            this.fapi.validate(async (valid, fail) => {
+                let formData = await this.fapi.formData();
+                console.log('提交的数据', formData);
+            });
+        },
         // 设置文件缓存
         initOption() {
             // let optionConfig = {

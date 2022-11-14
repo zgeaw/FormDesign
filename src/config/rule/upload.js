@@ -22,7 +22,9 @@ export default {
                 },
                 headers: {
                     'authentication': formOptionConfig.token || ''
-                }
+                },
+                multiple: false,
+                limit: 1
             }
         };
     },
