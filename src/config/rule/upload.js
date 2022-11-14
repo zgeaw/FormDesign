@@ -17,7 +17,7 @@ export default {
             info: '',
             props: {
                 action: formOptionConfig.uploadApi || '',
-                onSuccess: function(res, file) {
+                onSuccess: function onSuccessFn(res, file) {
                     file.url = res.data;
                 },
                 headers: {

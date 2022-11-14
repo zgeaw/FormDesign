@@ -125,6 +125,35 @@ export default {
             this.state = true;
             this.type = 0;
             this.value = this.$refs.designer.getRule();
+            // 对象序列化，undefined和函数丢失问题
+            // const JSONStringify = (option) => {
+            //     return JSON.stringify(
+            //         option,
+            //         (key, val) => {
+            //             console.log(444, val)
+            //             // 处理函数丢失问题
+            //             if (typeof val === 'function') {
+            //                 return `${val}`;
+            //             }
+            //             return val;
+            //         },
+            //         2
+            //     );
+            // };
+            // // 对象序列化解析
+            // const JSONParse = (objStr) => {
+            //     return JSON.parse(objStr, (k, v) => {
+            //         if (typeof v === 'string' && v.indexOf && v.indexOf('onSuccess') > -1) {
+            //             // eval 可能在eslint中报错，需要加入下行注释
+            //             // eslint-disable-next-line
+                        
+            //             console.log(555666, v);
+            //             return eval(v);
+            //         }
+            //         return v;
+            //     });
+            // };
+            // console.log(4455, JSONStringify(this.value));
         },
         showOption() {
             this.state = true;

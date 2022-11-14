@@ -1,6 +1,6 @@
 {
   "name": "@zgeaw/form-design",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "好用的vue可视化表单设计器组件",
   "main": "./dist/FormDesign.umd.min.js",
   "module": "./dist/FormDesign.umd.min.js",
