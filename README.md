@@ -1,7 +1,7 @@
 ## 安装
 
 ```shell
-npm install@zgeaw/FormDesign
+npm install @zgeaw/FormDesign
 ```
 
 **NodeJs:**
@@ -9,7 +9,7 @@ npm install@zgeaw/FormDesign
 请自行导入`ElementUI`并挂载
 
 ```js
-import FormCreate from "@zgeaw/FormCreate";
+import FormCreate from "@form-create/element-ui";
 import FormDesign from "@zgeaw/FormDesign";
 
 Vue.use(FormCreate);
