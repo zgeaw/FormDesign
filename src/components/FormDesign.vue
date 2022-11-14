@@ -434,12 +434,15 @@ export default {
   methods: {
     // 设置文件缓存
     initOption() {
-      let optionConfig = {
-        token:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2MmQyMjk1MWYwOTY0NGU1YjEwYjc4ZDE1YmNkYWE5NiIsImV4cCI6MTY2ODQ3NDkzM30.12C19OzaS01b4ZiKCDug2g00KY2QtrVU2yOnBw0bvIM",
-        uploadApi: "/minhang-project-cooperation/commonFile/uploadToUrl",
-      };
-      localStorage.setItem("formOptionConfig", JSON.stringify(optionConfig));
+      // let optionConfig = {
+      //   token:
+      //     "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2MmQyMjk1MWYwOTY0NGU1YjEwYjc4ZDE1YmNkYWE5NiIsImV4cCI6MTY2ODQ3NDkzM30.12C19OzaS01b4ZiKCDug2g00KY2QtrVU2yOnBw0bvIM",
+      //   uploadApi: "/minhang-project-cooperation/commonFile/uploadToUrl",
+      // };
+      localStorage.setItem(
+        "formOptionConfig",
+        JSON.stringify(this.optionConfig)
+      );
     },
     addMenu(config) {
       if (!config.name || !config.list) return;
