@@ -19,7 +19,8 @@ Vue.use(FormDesign);
 ## 使用
 
 ```html
-<FormDesign ref="designer" />
+<FormDesign ref="designer" :optionConfig="optionConfig" /> optionConfig = {
+token: '', uploadApi: '' }
 ```
 
 ## 组件`props`
