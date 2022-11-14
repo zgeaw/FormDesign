@@ -10,7 +10,7 @@ npm install @zgeaw/FormDesign
 
 ```js
 import FormCreate from "@form-create/element-ui";
-import FormDesign from "@zgeaw/FormDesign";
+import FormDesign from "@zgeaw/form-design";
 
 Vue.use(FormCreate);
 Vue.use(FormDesign);
