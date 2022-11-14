@@ -25533,7 +25533,7 @@ const formOptionConfig = localStorage.getItem('formOptionConfig') ? JSON.parse(l
       info: '',
       props: {
         action: formOptionConfig.uploadApi || '',
-        onSuccess(res, file) {
+        onSuccess: function onSuccessFn(res, file) {
           file.url = res.data;
         },
         headers: {
