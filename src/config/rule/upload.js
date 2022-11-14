@@ -16,12 +16,12 @@ export default {
             title: label,
             info: '',
             props: {
-                action: formOptionConfig.uploadApi,
+                action: formOptionConfig.uploadApi || '',
                 onSuccess(res, file) {
                     file.url = res.data;
                 },
                 headers: {
-                    'authentication': formOptionConfig.token
+                    'authentication': formOptionConfig.token || ''
                 }
             }
         };
