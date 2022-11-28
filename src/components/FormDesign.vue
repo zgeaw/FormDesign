@@ -40,16 +40,21 @@
 }
 
 ._fc-l-item {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: #FFF;
-    color: #000;
+    color: rgba(54, 98, 236, 1);
     min-width: 70px;
-    width: 33.33%;
-    height: 70px;
+    width: 46%;
+    height: 45px;
     line-height: 1;
     text-align: center;
     transition: all .2s ease;
     cursor: pointer;
+    background: rgba(54, 98, 236, 0.20);
+    border-radius: 4px;
+    margin: 5px 2%;
 }
 
 ._fc-l-item i {
@@ -246,8 +251,7 @@ import createMenu from '../config/menu';
 import {upper} from '../utils/index';
 import {designerForm} from '../utils/form';
 import viewForm from '../utils/form';
-
-
+import _ from 'lodash';
 export default {
     name: 'FcDesigner',
     components: {
@@ -389,6 +393,27 @@ export default {
             //     "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2MmQyMjk1MWYwOTY0NGU1YjEwYjc4ZDE1YmNkYWE5NiIsImV4cCI6MTY2ODQ3NDkzM30.12C19OzaS01b4ZiKCDug2g00KY2QtrVU2yOnBw0bvIM",
             //   uploadApi: "/minhang-project-cooperation/commonFile/uploadToUrl",
             // };
+            if(this.optionConfig && this.optionConfig.menu && this.optionConfig.menu.length > 0){
+                let menuList = [];
+                this.optionConfig.menu.map(e => {
+                    let index = _.map(this.menuList, 'name').indexOf(e.name);
+                    let menuItem = {
+                        name: e.name,
+                        title: e.title,
+                        list: []
+                    };
+                    this.menuList[index].list.map(f => {
+                        if(e.list.includes(f.name)){
+                            menuItem.list.push(f); 
+                        }
+                    });
+                    console.log(444, index, menuItem);
+                    menuList.push(menuItem);
+                });
+                this.menuList = menuList;
+                console.log(555, this.menuList, menuList);
+
+            }
             if (this.optionConfig) {
                 localStorage.setItem(
                     'formOptionConfig',
@@ -874,7 +899,7 @@ export default {
         },
     },
     created() {
-        this.initOption()
+        this.initOption();
         document.body.ondrop = e => {
             e.preventDefault();
             e.stopPropagation();

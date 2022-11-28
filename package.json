@@ -1,6 +1,6 @@
 {
   "name": "@zgeaw/form-design",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "好用的vue可视化表单设计器组件",
   "main": "./dist/FormDesign.umd.min.js",
   "module": "./dist/FormDesign.umd.min.js",
@@ -38,7 +38,8 @@
   "dependencies": {
     "@form-create/component-wangeditor": "^2.5.15",
     "@form-create/element-ui": "^2.5.19",
-    "@form-create/utils": "^2.5.15"
+    "@form-create/utils": "^2.5.15",
+    "lodash": "^4.17.15"
   },
   "publishConfig": {
     "access": "public"

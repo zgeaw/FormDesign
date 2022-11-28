@@ -77,7 +77,16 @@ export default {
             type: -1,
             optionConfig: {
                 token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI2MmQyMjk1MWYwOTY0NGU1YjEwYjc4ZDE1YmNkYWE5NiIsImV4cCI6MTY2ODUwMDU4OH0.7NkSqhUVRdmdPq7Ame8UUAIJvAnOYj1DIR25WQrhpn4',
-                uploadApi: '/minhang-project-cooperation/commonFile/uploadToUrl'
+                uploadApi: '/minhang-project-cooperation/commonFile/uploadToUrl',
+                menu: [
+                    {
+                        name: 'main',
+                        title: '表单组件',
+                        list: [
+                            'input', 'inputNumber', 'radio', 'checkbox', 'select', 'switch', 'timePicker', 'datePicker', 'upload'
+                        ]
+                    }
+                ]
             }
         };
     },
